@@ -18,13 +18,13 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 #função para acessar dados do sheets
 def get_records_from_sheet():
-        sheet_id = '1WoCbw1tCk3vQ8Z8Vfbld4oukQoPmaa13GEGNA55GVNE'
+        sheet_id = '1iqQz0pfVxRMnBOxp7iS05-5ciOeoZx-2ni8h4G6hZkY'
         
         saccount_email = 'default-cf@portfolio-comercializadora.iam.gserviceaccount.com'
 
         gsheet_client = GSheet_Client(saccount_email=saccount_email, default_spreadsheet_id=sheet_id)
 
-        data = gsheet_client.sheets.get_by_sheet_name(sheet_name='A RECEBER PY')
+        data = gsheet_client.sheets.get_by_sheet_name(sheet_name='A RECEBER')
         
         df = pd.DataFrame(data)
     
